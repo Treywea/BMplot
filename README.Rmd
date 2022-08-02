@@ -26,9 +26,9 @@ This package implements functions to visualize the profile of base modification 
 
 ## Introduction
 
-Biology relies heavily on epigenetics as a method of altering genetic information without altering nucleic acids.
+Biology relies heavily on epigenetics as it controls gene expression without altering sequences.
   
-Many methods are used to detect the epigenetic status with the combination of sequencing and chemical methods, such as `Me‑DIP` and `oxBS‑seq` for `5mC`; `TAB-seq` and `hme‑DIP` for `5hmC`; `6mA‑DIP` and `6mA‑RE-seq` for `6mA`. Aside from these, third-generation sequencing methods, which refer to direct single-molecule sequencing, such as Oxford Nanopore Sequencing and PacBio SMRT Sequencing, can detect epigenetic status at single-base resolution. BMplot is designed to visualize single-base resolution epigenetic data by considering the strand, motif, and additional information.
+Many methods are used to detect the DNA/RNA modifications with the combination of chemical treatment and next-generation sequencing. Some methods for include the `WGBS` and `RRBS` for `5mC`; `TAB-seq` and `oxBS-seq` for `5hmC`; `6mA-RE-seq` and `6mACE‑seq` for `6mA`;  could detect the DNA or RNA modificaitons in single-base resolution. Aside from these, third-generation sequencing methods, which refer to direct single-molecule sequencing, such as Oxford Nanopore Sequencing and PacBio SMRT Sequencing, can directly detect epigenetic status along with their bases. BMplot is designed to visualize single-base resolution epigenetic data by considering the strand, motif, and additional information.
 
 BMplot provides two functions to visualize the base modification. `getBaseModificationDf()` gets the information about base modification in each base and organizes it into a data frame. `plotBaseModificationProf()` can return an ggplot object that can be used to visualize the base modification using the data frame returned by `getBaseModificationDf()`.
 
@@ -36,7 +36,7 @@ BMplot provides two functions to visualize the base modification. `getBaseModifi
 
 Any regions of user intesets could be visualized in BMplot. With the data provided by users, BMplot creates the `bmData` object to store comprehensive information about base modifications in DNA or RNA. 
 
-DNA methylation is one of the base modifications that plays an important role in various biological processes. As the differentially methylated regions (DMR) are most of the command interests, here we use the data from WGBS (whole-genome bisufile sequencing) as the showcase to show how to prepare the `bmData` object in BMplot. 
+DNA methylation is one of the base modifications that plays an important role in various biological processes. As the differentially methylated regions (DMR) are most of the command interests, here we use the data from WGBS (whole-genome bisulfite sequencing) as the showcase to show how to prepare the `bmData` object in BMplot. 
 
 bmData object is similar to BSseq object, storing any base modification information, like IPD value[@flusberg2010direct] and so on, for the reason that BSseq object can only store information of methylation and read depth. There are three functions provided by `BMplot` including one constructor and two functions enclosing the constructor.
 
